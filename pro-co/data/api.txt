@@ -1,0 +1,33 @@
+http://localhost:5000/api/auth/register
+ for login 
+ http://localhost:5000/api/auth/login
+ add book
+ http://localhost:5000/api/books
+ get bboks
+ search specif book
+ http://localhost:5000/api/books/:isbn
+ add arting and comment
+ http://localhost:5000/api/reviews/books/:isbn
+get review and commnets
+http://localhost:5000/api/books/9780131103627/reviews
+delete books 
+http://localhost:5000/api/books/delete/6a7eb2360bc1dc20539e5780
+all user
+http://localhost:5000/api/reviews/admin/reviewerall
+delete user 
+http://localhost:5000/api/reviews/admin/reviewer/6a7ead15755842d313112752
+review delete
+http://localhost:5000/api/reviews/admin/6a7eb742678dbcc45087131a
+search isbn
+http://localhost:5000/api/books/9780142437339/reviews
+search title
+http://localhost:5000/api/books/title/Moby-Dick
+search by auther name 
+http://localhost:5000/api/books/author/Herman%20Melville
+delete reviewer of thhis review
+http://localhost:5000/api/reviews/6a82e0fbb656c5623e236365
+
+update review
+http://localhost:5000/api/reviews/6a82e0fbb656c5623e236365
+add review
+http://localhost:5000/api/reviews/books/9780261102361
