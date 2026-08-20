@@ -13,7 +13,6 @@ function BookDetails() {
   })
 const token = localStorage.getItem("token");
     let role = null;
-    let username = null;
   
     if (token) {
       try {
