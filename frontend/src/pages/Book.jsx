@@ -159,11 +159,18 @@ const token = localStorage.getItem("token");
       </div>
         {role === 'admin'|| role === "reviewer" ? (
   <form className="admin-form">
-    <input type="text" placeholder="Admin Settings" />
-    <button type="submit">Save</button>
+    <select style={{width:'80px', height:"30px" , border:"none", borderRadius:"10px", textAlign:"center", marginRight:"10px" , backgroundColor: "#FFA500", }}>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <input type="text" placeholder="Comment"  style={{width:'200px', height:"30px", borderRadius:'6px', border:'1px solid black'}}/>
+    <button type="submit" style={{width:'80px', height:"30px" , border:"none", borderRadius:"10px", textAlign:"center", marginLeft:"10px" , backgroundColor: "#FFA500"}}>Save</button>
   </form>
 ) : (
-  <p>You do not have access to this form.</p>
+  <p>Want to review add ask admin to register your.</p>
 )}
 
       

@@ -13,9 +13,7 @@ const [error, setError] = useState("")
       ...formData,
       [e.target.name]: e.target.value
     });
-  
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     sendData();
@@ -37,9 +35,6 @@ const [error, setError] = useState("")
           body: JSON.stringify(formData)
         }
       );
-
-      
-
     const result = await response.json();
 
  if (!response.ok) {
