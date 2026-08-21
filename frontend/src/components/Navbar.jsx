@@ -1,28 +1,17 @@
 // 
 import { Link, useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-import { useState } from "react";
+import { useAuth } from "../AuthContext";
 
 function Navbar() {
   const navigate = useNavigate();
 
- // const token = localStorage.getItem("token");
-    const [token, setToken] = useState(localStorage.getItem("token"));
-  let role = null;
-  let username = null;
+  const { token, user, logout } = useAuth();
 
-  if (token) {
-    try {
-      const decoded = jwtDecode(token);
-      role = decoded.role;
-      username = decoded.username;
-    } catch (error) {
-      console.log(`Invalid token: ${error.message}`);
-    }
-  }
+
+
 
   const handleLogout = () => {
-    setToken(localStorage.removeItem("token"));
+    logout();
     navigate("/login");
   };
 
@@ -73,7 +62,7 @@ function Navbar() {
           </Link>
         )}
 
-        {role === "admin" && (
+        {user?.role === "admin" && (
           <Link style={linkStyle} to="/register">
             Register
           </Link>
@@ -88,7 +77,7 @@ function Navbar() {
                 margin: "0 10px",
               }}
             >
-             hi, {username}
+             hi, {user?.username}
             </span>
 
             <button

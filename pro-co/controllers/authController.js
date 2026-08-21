@@ -99,8 +99,7 @@ export const login = async (req, res) => {
         expiresIn: "1h"
       }
     );
-    // Create session
-    req.session.userId = user._id;
+   
     res.json({
       message: "Login successful",
       token,
@@ -110,6 +109,8 @@ export const login = async (req, res) => {
         email: user.email
       }
     });
+
+    
   } catch (error) {
     console.log("login failed 500:" ,error.message)
     res.status(500).json({

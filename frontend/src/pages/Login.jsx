@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ function Login() {
     password: ""
   });
   const [error, setError] = useState("")
+  const { login } = useAuth();
 const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
@@ -43,7 +45,7 @@ const sendData = async () => {
    
     const token = result.token;
 
-    localStorage.setItem("token", token);
+    login(token)
      navigate("/")
   } catch (error) {
     console.error(error.message);
